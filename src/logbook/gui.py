@@ -198,6 +198,27 @@ class LogbookGUI:
         )
         self.therm_count_value.pack(side="left", padx=8, pady=4)
 
+        # Separator
+        sep2 = tk.Label(pilot_tasks_frame, text="|", bg="#a9a9a9")
+        sep2.pack(side="left", padx=4, pady=4)
+
+        # Flight count field
+        flight_count_label = tk.Label(
+            pilot_tasks_frame,
+            text="Flight count:",
+            bg="#a9a9a9",
+            font=("TkDefaultFont", 9, "bold")
+        )
+        flight_count_label.pack(side="left", padx=8, pady=4)
+
+        self.flight_count_value = tk.Label(
+            pilot_tasks_frame,
+            text="0",
+            bg="#a9a9a9",
+            font=("TkDefaultFont", 9)
+        )
+        self.flight_count_value.pack(side="left", padx=8, pady=4)
+
         # Main content frame with Treeview
         content_frame = ttk.Frame(self.root, padding="8")
         content_frame.pack(fill="both", expand=True, padx=8, pady=8)
@@ -323,10 +344,18 @@ class LogbookGUI:
         unrecorded_time_seconds = _parse_dayhourminsec(self.unrecorded_flight_time_var.get())
         total_seconds += unrecorded_time_seconds
 
+        # Calculate total flight count (recorded + unrecorded)
+        try:
+            unrecorded_count = int(self.unrecorded_flights_var.get())
+        except ValueError:
+            unrecorded_count = 0
+        total_flight_count = len(flights) + unrecorded_count
+
         # Update stats labels
         self.total_time_value.config(text=_format_total_duration(total_seconds))
         self.max_altitude_value.config(text=f"{max_altitude:.0f} m" if max_altitude > 0 else "0 m")
         self.therm_count_value.config(text=str(therm_1000ft_count))
+        self.flight_count_value.config(text=str(total_flight_count))
         
         # Populate table
         for flight in flights:
