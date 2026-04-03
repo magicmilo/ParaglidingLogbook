@@ -28,6 +28,24 @@ pip install -r requirements.txt
 python -m logbook.main
 ```
 
+## Build standalone executable (single command)
+
+### Windows PowerShell
+```powershell
+cd c:\Users\bascombe\source\python\logbook
+.venv\Scripts\Activate.ps1
+.\build_exe.ps1
+```
+
+### macOS/Linux
+```bash
+cd c:\Users\bascombe\source\python\logbook
+source .venv/bin/activate
+./build_exe.sh
+```
+
+After build, distribute `dist/logbook.exe` (or `dist/logbook`) alongside `flight_data/`.
+
 ## Development
 - Database file: `logbook.db` in current working directory
 - Migrations are in `src/logbook/migrations`
