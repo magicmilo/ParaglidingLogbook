@@ -84,31 +84,31 @@ class LogbookGUI:
 
         # Left side: buttons and pilot label
         left_frame = ttk.Frame(button_frame)
-        left_frame.pack(side="left", fill="x", expand=False)
+        left_frame.pack(side="left", anchor="n")
+
+        # First row: main control buttons
+        buttons_row = ttk.Frame(left_frame)
+        buttons_row.pack(side="top", anchor="w")
 
         import_btn = ttk.Button(
-            left_frame,
+            buttons_row,
             text="Import New Data",
             command=self.on_import_new_data,
         )
         import_btn.pack(side="left", padx=4)
 
-        refresh_btn = ttk.Button(left_frame, text="Refresh", command=self.refresh_table)
+        refresh_btn = ttk.Button(buttons_row, text="Refresh", command=self.refresh_table)
         refresh_btn.pack(side="left", padx=4)
 
-        self.current_pilot_label = ttk.Label(left_frame, text=f"Pilot: {self.current_pilot or 'None'}")
+        self.current_pilot_label = ttk.Label(buttons_row, text=f"Pilot: {self.current_pilot or 'None'}")
         self.current_pilot_label.pack(side="left", padx=4)
 
-        clear_all_btn = ttk.Button(left_frame, text="Clear All Data", command=self.on_clear_all_data)
+        clear_all_btn = ttk.Button(buttons_row, text="Clear All Data", command=self.on_clear_all_data)
         clear_all_btn.pack(side="left", padx=4)
 
-        # Right side: statistics box (outer container)
-        stats_frame = tk.Frame(button_frame, relief="solid", bd=1)
-        stats_frame.pack(side="right", fill="x", padx=4)
-
-        # Unrecorded fields now inside left frame to stay with main controls
+        # Second row: unrecorded fields
         unrecorded_frame = ttk.Frame(left_frame, padding="4")
-        unrecorded_frame.pack(side="left", padx=4)
+        unrecorded_frame.pack(side="top", anchor="w", pady=(4, 0))
 
         ttk.Label(unrecorded_frame, text="Unrecorded flights:").pack(side="left", padx=(0,4))
         self.unrecorded_flights_entry = ttk.Entry(unrecorded_frame, width=6, textvariable=self.unrecorded_flights_var)
@@ -121,6 +121,10 @@ class LogbookGUI:
         self.unrecorded_flights_entry.bind("<FocusOut>", lambda e: self._save_unrecorded_settings())
         self.unrecorded_flight_time_entry.bind("<FocusOut>", lambda e: self._save_unrecorded_settings())
         self.unrecorded_flight_time_entry.bind("<Return>", lambda e: self._save_unrecorded_settings())
+
+        # Right side: statistics box (outer container)
+        stats_frame = tk.Frame(button_frame, relief="solid", bd=1)
+        stats_frame.pack(side="right", fill="x", padx=4)
 
         # Inner frame 1: Current stats (light grey)
         stats_inner_frame = tk.Frame(stats_frame, bg="#d3d3d3", relief="solid", bd=0)
