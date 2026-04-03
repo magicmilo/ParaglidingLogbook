@@ -1,0 +1,13 @@
+[project]
+name = "logbook"
+version = "0.1.0"
+description = "Paragliding logbook with IGC import and SQLite storage"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyigc>=0.5", 
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
