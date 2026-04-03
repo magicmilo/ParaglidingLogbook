@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/logbook/__init__.py
+src/logbook/db.py
+src/logbook/file_scanner.py
+src/logbook/gui.py
+src/logbook/igc_reader.py
+src/logbook/main.py
+src/logbook/models.py
+src/logbook.egg-info/PKG-INFO
+src/logbook.egg-info/SOURCES.txt
+src/logbook.egg-info/dependency_links.txt
+src/logbook.egg-info/requires.txt
+src/logbook.egg-info/top_level.txt
+src/logbook/migrations/__init__.py
+src/logbook/migrations/m0001_create_flights.py
+tests/test_igc_reader.py

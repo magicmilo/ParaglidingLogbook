@@ -1,0 +1,20 @@
+Basics
+Date: 2026-04-02 10:33
+Pilot: Milo Bascombe
+Glider: OZONE Geo 5
+
+Flight
+Duration: 00:36:00
+Tracklog length: 16.0km
+Max altitude: 585m
+Max alt.gain: 420m
+
+Takeoff
+Name: Westbury
+Time: 11:33:48
+Altitude: 213m
+
+Landing
+Time: 12:09:52
+Altitude: 157m
+

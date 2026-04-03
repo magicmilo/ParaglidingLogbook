@@ -5,7 +5,10 @@ description = "Paragliding logbook with IGC import and SQLite storage"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "pyigc>=0.5", 
+    "libigc>=1.1.0",
+    "igc-parser>=0.0.1",
+    "SQLAlchemy>=2.0.0",
+    # optional fallback: "igc>=0.2.0"
 ]
 
 [build-system]

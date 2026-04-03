@@ -1,1 +1,7 @@
-pyigc>=0.5
+libigc>=1.1.0
+# fallback option if needed
+igc-parser>=0.0.1
+# optional thin cli wrapper
+igc>=0.2.0
+# ORM and database
+SQLAlchemy>=2.0.0
