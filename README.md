@@ -2,6 +2,10 @@
 
 A lightweight Python app for storing paragliding flights (IGC files) in a local SQLite database and exploring them via GUI.
 
+Place .igc files in a sub directory of this program named 'flight_data'
+
+Only files that haven't been previously imported will be added.
+
 ## Features (starter framework)
 - SQLite database for persistent local storage
 - `flights` table with flight metadata
