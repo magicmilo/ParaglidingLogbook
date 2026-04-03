@@ -16,7 +16,6 @@ A lightweight Python app for storing paragliding flights (IGC files) in a local 
 ## Setup
 
 ```bash
-cd c:\Users\bascombe\source\python\logbook
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
@@ -32,14 +31,12 @@ python -m logbook.main
 
 ### Windows PowerShell
 ```powershell
-cd c:\Users\bascombe\source\python\logbook
 .venv\Scripts\Activate.ps1
 .\build_exe.ps1
 ```
 
 ### macOS/Linux
 ```bash
-cd c:\Users\bascombe\source\python\logbook
 source .venv/bin/activate
 ./build_exe.sh
 ```
