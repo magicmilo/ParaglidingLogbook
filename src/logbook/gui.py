@@ -106,9 +106,9 @@ class LogbookGUI:
         stats_frame = tk.Frame(button_frame, relief="solid", bd=1)
         stats_frame.pack(side="right", fill="x", padx=4)
 
-        # New row below top controls for persistent unrecorded fields
-        unrecorded_frame = ttk.Frame(self.root, padding="4")
-        unrecorded_frame.pack(fill="x", padx=8, pady=(0,8))
+        # Unrecorded fields now inside left frame to stay with main controls
+        unrecorded_frame = ttk.Frame(left_frame, padding="4")
+        unrecorded_frame.pack(side="left", padx=4)
 
         ttk.Label(unrecorded_frame, text="Unrecorded flights:").pack(side="left", padx=(0,4))
         self.unrecorded_flights_entry = ttk.Entry(unrecorded_frame, width=6, textvariable=self.unrecorded_flights_var)
